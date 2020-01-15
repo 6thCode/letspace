@@ -1,0 +1,41 @@
+@import "../styles/Variables.scss";
+@import "../styles/Mixins.scss";
+
+.browse-apartment-section {
+    width: 265px;
+    &-image {
+        width: 100%;
+        height: 150px;
+        margin-bottom: .4rem;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 4px 4px 0 0;
+        }
+    }
+    &-details {
+        p {
+            margin-bottom: .2rem;
+            &:nth-child(1) {
+                color: $primaryColor;
+                font-size: 12;
+                line-height: $font-events-base;
+                font-weight: $font-bold;
+            }
+            &:nth-child(2) {
+                color: $primaryTextColor;
+                font-size: $font-size-base;
+                line-height: $font-events-base;
+                font-weight: $font-bold;
+            }
+            &:nth-child(3) {
+                color: $secondaryTextColor;
+                font-size: $font-size-base;
+                line-height: $font-events-base;
+                font-weight: $font-normal;
+            }
+        }
+    }
+    @include medium-screens { width: 100%; }
+}

@@ -1,0 +1,99 @@
+@import "../styles/Variables.scss";
+@import "../styles/Mixins.scss";
+
+.footer-container {
+    // position: absolute;
+    width: 100%;
+    // bottom: 0;
+    .newsletter {
+        @include centerCenter;
+        background: $secondaryColor;
+        width: 100%;
+        height: 90px;
+        p {
+            font-size: $font-size-base;
+            line-height: 16px;
+            font-weight: $font-bold;
+            color: $white;
+            max-width: 330px;
+            text-align: right;
+            margin-bottom: 0rem;
+        }
+        input {
+            color: $primaryTextColor;
+            font-size: $font-size-base;
+            line-height: 16px;
+            width: 273px;
+            height: 40px;
+            border: 0;
+            outline: none;
+            @include radiusLeft;
+            padding-left: 1.2rem;
+            margin-left: 1rem;
+            &::placeholder {
+                color: rgba(51, 51, 51, 0.5);
+                font-size: 12px;
+                line-height: 13px;
+                font-weight: $font-light;
+            }
+
+        }
+        button {
+            @include defaultButton;
+            @include  radiusRight;
+            font-size: $font-size-base;
+            line-height: 16px;
+            font-weight: $font-normal;
+            width: 110px;
+            height: 40px;
+        }
+    }
+    &-main {
+        background: #F7F7F7;
+        .display  { @include spaceCenter; }
+        .main-content {
+            width: 360px;
+            text-align: left;
+            padding: 3rem 0 1rem;
+        }
+        .main-other {
+            @include spaceCenter;
+            min-width: 55%;
+            ul {
+                list-style: none;
+                padding: 0;
+                text-align: left;
+                margin-bottom: 0;
+                 p {
+                    color: $primaryTextColor;
+                    font-size: $font-events-base;
+                    font-weight: $font-bold;
+                    line-height: 18px;
+                    margin-bottom: 1rem;
+                }
+                a {
+                    color: $secondaryTextColor;
+                    cursor: pointer;
+                    font-size: $font-size-base;
+                    line-height: 20px;
+                    font-weight: $font-normal;
+                    transition: .3s ease-in-out;
+                    &:hover {
+                        color: $primaryColor;
+                    }
+                }
+            }
+        }
+        p {
+            font-size: 14px;
+            line-height: 20px;
+            color: $secondaryTextColor;
+            margin-bottom: 0rem;
+        }
+        .copyright { margin-top: 2rem;}
+    }
+    @include medium-screens {
+       @include hidden;
+    }
+}
+

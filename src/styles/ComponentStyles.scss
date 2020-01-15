@@ -1,0 +1,183 @@
+@import "../styles/Variables.scss";
+@import "../styles/Mixins.scss";
+
+.main-icon-left {
+    color: $secondaryTextColor;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 9999;
+}
+.main-icon-right {
+    position: absolute;
+    right: 14px;
+    top: 11px;
+}
+select {
+    position: relative;
+    background: $white;
+    width: 100%;
+    height: 45px;
+    border: 1px solid #F1F1F1;
+    -webkit-appearance: none;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 400;
+    outline: none;
+    padding: 0 2rem;
+    margin-bottom: 1rem;
+    &::before {
+        position: absolute;
+        content: "\2303";
+        left: 8px;
+        top: 7px;
+        color: $secondaryTextColor;
+        font-weight: 600;
+    }
+}
+
+
+// Social media buttons on authentication form
+.button-social {
+    color: #fff;
+    width: 100%;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: bold;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+//  Authentication input forms
+.auth-input {
+    @include input-placeholder;
+    @include input-placeholder-auth;
+}
+
+.main-button {
+    @include mainButtonDisplay;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: $font-bold;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.outline-button {
+    @include outlineButtonDisplay;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: $font-bold;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+//  Star rating
+.star-rating {
+    direction: rtl;
+    display: inline-block;
+}
+
+.star-rating input[type=radio] {
+    display: none
+}
+
+.star-rating label {
+    color: $primaryTextColor;
+    font-size: 15px;
+    padding: 0 3px;
+    cursor: pointer;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label,
+.star-rating input[type=radio]:checked ~ label {
+    color: $primaryColor
+}
+
+.error-page-section {
+    @include centerCenter;
+    flex-direction: column;
+    height: 100vh;
+    .error-pic {
+        margin-bottom: 4rem;
+    }
+    &-display {
+        text-align: center;
+        max-width: 571px;
+        h1 {
+            color: $primaryTextColor;
+            font-size: 36px;
+            line-height: 40px;
+            font-weight: $font-bold;
+        }
+        p {
+            color: $secondaryTextColor;
+            font-size: 16px;
+            line-height: 20px;
+            font-weight: $font-normal;
+            margin: 19px 0 30px;
+        }
+    }
+}
+
+// Top countries section
+.top-countries  {
+    color: $secondaryTextColor;
+    font-size: $font-size-base;
+    cursor: pointer;
+    line-height: 20px;
+    font-weight: $font-normal;
+    transition: .3s ease-in-out;
+    &:hover {
+        color: $primaryColor;
+    }
+}
+
+//  Single page image begins here
+
+.single-page-gallery {
+    height: 368px;
+    img {
+        width: 100%;
+        object-fit: cover;
+        height: 100%;
+    }
+}
+
+.single-page-gallery-small {
+    width: 100%;
+    height: 70px;
+    img {
+        width: 100%;
+        object-fit: cover;
+        height: 100%;
+    }
+}
+.slick-slide img { padding: .2rem; }
+
+
+.listing-with-filter {
+    width: 262px;
+    height: 383px;
+    border-radius: 4px;
+    box-shadow: 0px 4px 20px rgba(141, 135, 135, 0.1);
+    &-image {
+        height: 201px;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}

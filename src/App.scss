@@ -1,3 +1,6 @@
+@import "styles/Variables.scss";
+
+
 .App {
   text-align: center;
 }
@@ -35,4 +38,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+p {
+  color: $primaryColor;
 }

@@ -1,0 +1,161 @@
+@import '../styles//Variables.scss';
+
+@mixin boxShadow {
+    box-shadow: 0px 4px 20px rgba(141, 135, 135, 0.1);
+}
+
+@mixin spaceCenter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+@mixin centerCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin alignCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// Mobile and Tablet responsiveness
+@mixin tiny-screens() {
+    @media only screen and (max-width: 575px) {
+        @content;
+    }
+}
+
+@mixin radiusBtn {
+    border-radius: 4px;
+}
+
+@mixin radiusLeft {
+    border-radius: 4px 0px 0px 4px;
+}
+
+@mixin radiusRight {
+    border-radius: 0px 4px 4px 0px;
+}
+
+@mixin hidden {
+	display: none;
+	visibility: hidden;
+}
+
+@mixin defaultButton {
+    background: $primaryColor;
+    color: $white;
+    width: 100%;
+    border: 0;
+    outline: none;
+    transition: .3s ease-in-out;
+    &:hover {
+        background: darken($color: $primaryColor, $amount: 10%);
+    }
+}
+
+@mixin small-screens() {
+    @media only screen and (max-width: 767px) {
+        @content;
+    }
+}
+
+@mixin medium-screens() {
+    @media only screen and (max-width: 991px) {
+        @content;
+    }
+}
+
+@mixin border-radius {
+    border: 1px solid $borderColor;
+    border-radius: 4px;
+}
+
+@mixin input-placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; }
+}
+
+@mixin input-placeholder-auth {
+    width: 100%;
+    height: 45px;
+    @include border-radius;
+    font-size:  $font-size-base;
+    line-height: $font-events-base;
+    font-weight: $font-normal;
+    outline: none;
+    padding: 0 1.6rem;
+    margin-bottom: 1rem;
+}
+
+@mixin mainButtonDisplay {
+    background: $primaryColor;
+    @include centerCenter;
+    min-height: 45px;
+    color: $white;
+    width: 100%;
+    height: 100%;
+    transition: .3s ease-in-out;
+    &:hover {
+        color: $white;
+        text-decoration: none;
+        background: darken($color: $primaryColor, $amount: 10%);
+    }
+}
+
+@mixin outlineButtonDisplay {
+    background: transparent;
+    border: 1px solid $primaryColor;
+    @include centerCenter;
+    min-height: 45px;
+    color: $primaryColor;
+    width: 100%;
+    height: 100%;
+    transition: .3s ease-in-out;
+    &:hover {
+        color: $white;
+        text-decoration: none;
+        background: darken($color: $primaryColor, $amount: 10%);
+    }
+}
+
+@mixin gridDisplay($columns, $gap) {
+    display: grid;
+    grid-template-columns: $columns;
+    grid-gap: $gap;
+}
+
+@mixin slickSliderShadow($right, $left, $top) {
+    .slick-next {
+        position: absolute;
+        right: $right;
+        top: $top;
+        z-index: +1;
+        @include medium-screens { right: 85px }
+    }
+    .slick-prev {
+        position: absolute;
+        left: $left;
+        top: $top;
+        z-index: +1;
+        @include medium-screens { left: 0px; right: 35px; }
+    }
+
+    .slick-next:before {
+        content: url('../assets/svgs/circle-arrow-next.svg');
+        opacity: 1;
+    }
+
+    .slick-prev:before {
+        content: url('../assets/svgs/circle-arrow-prev.svg');
+        opacity: 1;
+    }
+}

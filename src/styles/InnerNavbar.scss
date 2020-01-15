@@ -1,0 +1,44 @@
+@import "../styles/Variables.scss";
+@import "../styles/Mixins.scss";
+
+.inner-header {
+  height: 77px;
+  padding: 0 4%;
+  background: $white;
+  ul {
+    transition: all 0.6s ease-in-out;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+      display: inline-block;
+      padding: 0  1rem;
+      a {
+        color: $primaryTextColor;
+        transition: .3s ease-in-out;
+        &:hover {
+          color: $primaryColor;
+          text-decoration: none;
+          cursor: pointer;
+        }
+        &:active {
+          color: $primaryColor;
+          // border-bottom: 2px solid $primaryColor;
+          // padding: 1rem 0;
+        }
+      }
+    }
+    svg {
+      margin-right: .5rem;
+      vertical-align: text-top;
+    }
+    p {
+      display: inline-block; 
+      cursor: pointer;
+      font-size: 15px;
+      color: $primaryTextColor;
+      font-weight: $font-bold;
+    }
+  }
+}

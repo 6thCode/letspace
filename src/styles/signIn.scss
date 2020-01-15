@@ -1,0 +1,270 @@
+@import "../styles/Variables.scss";
+@import "../styles/Mixins.scss";
+
+body {
+    background: $backgroundColor;
+}
+
+.auth-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.auth-section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background: $white;
+    width: 516px;
+    // height: 720px;
+    margin: 0 auto;
+    @include border-radius;
+    &-red {
+        background: $primaryColor;
+        font-weight: $font-bold;
+        font-size: 25px;
+        color: $white;
+        line-height: 28px;
+        width: 100%;
+        height: 100%;
+        border-radius: 4px 4px 0px 0px;
+        p {
+            display: inline-block;
+            margin: 1rem 0;
+        }
+        &-details {
+            padding: 2rem;
+        }
+    }
+    .auth-content {
+        align-self: center;
+        background: $white;
+        width: 100%;
+        // min-height: 470px;
+        border-radius: 4px;
+        @include boxShadow;
+        &-section {
+            padding: 1rem;
+            .account {
+                display: block;
+                color: #888888;
+                font-size: $font-size-base;
+                line-height: $font-events-base;
+                font-weight: $font-normal;
+                text-align: center;
+            }
+            span a {
+                color: $primaryColor;
+                text-decoration: underline;
+                cursor: pointer;
+            }
+            .first-last {
+                @include gridDisplay(repeat(2, 1fr), 1rem);
+            }
+        }
+    }
+    // .whiteview {
+    //     position: absolute;
+    //     background: $primaryColor;
+    //     top: 0;
+    //     width: 100%;
+    //     height: 250px;
+    // }
+}
+
+h2 {
+    text-align: center;
+}
+
+h2.background {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 1rem;
+    &:before {
+        border-top: 1px solid #E0E5E6;
+        content:"";
+        margin: 0 auto; /* this centers the line to the full width specified */
+        position: absolute; /* positioning must be absolute here, and relative positioning must be applied to the parent */
+        top: 61%; 
+        left: 0; 
+        right: 0; 
+        bottom: 0;
+        width: 100%;
+        z-index: -1;
+    }
+
+    .line-behind { 
+        /* to hide the lines from behind the text, you have to set the background color the same as the container */ 
+        background: #fff; 
+        padding: 0 15px; 
+        font-size: 14px;
+        line-height: 16px;
+        text-decoration: none;
+        color: $secondaryTextColor;
+    }
+}
+
+.cbx {
+    position: relative;
+    top: -1px;
+    width: 17px;
+    height: 17px;
+    border: 1px solid #CED1D3;
+    border-radius: 3px;
+    transition: background 0.1s ease;
+    margin-bottom: 0;
+    cursor: pointer;
+  }
+  .cbx:after {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 5px;
+    width: 5px;
+    height: 11px;
+    opacity: 0;
+    transform: rotate(45deg) scale(0);
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transition: all 0.3s ease;
+    transition-delay: 0.15s;
+  }
+  .lbl {
+    margin-left: 5px;
+    vertical-align: middle;
+    cursor: pointer;
+    color: #888;
+    font-size: 12px;
+    line-height: 13px;
+    font-weight: $font-normal;
+    margin-bottom: 0;
+  }
+  #cbx:checked ~ .cbx {
+    border-color: transparent;
+    background: $primaryColor;
+    animation: jelly 0.6s ease;
+  }
+  #cbx:checked ~ .cbx:after {
+    opacity: 1;
+    transform: rotate(45deg) scale(1);
+  }
+  .cntr {
+      display: inline-flex;
+      align-items: center;
+    .hidden-xs-up {
+        @include hidden;
+    }
+  }
+  @-moz-keyframes jelly {
+    from {
+      transform: scale(1, 1);
+    }
+    30% {
+      transform: scale(1.25, 0.75);
+    }
+    40% {
+      transform: scale(0.75, 1.25);
+    }
+    50% {
+      transform: scale(1.15, 0.85);
+    }
+    65% {
+      transform: scale(0.95, 1.05);
+    }
+    75% {
+      transform: scale(1.05, 0.95);
+    }
+    to {
+      transform: scale(1, 1);
+    }
+  }
+  @-webkit-keyframes jelly {
+    from {
+      transform: scale(1, 1);
+    }
+    30% {
+      transform: scale(1.25, 0.75);
+    }
+    40% {
+      transform: scale(0.75, 1.25);
+    }
+    50% {
+      transform: scale(1.15, 0.85);
+    }
+    65% {
+      transform: scale(0.95, 1.05);
+    }
+    75% {
+      transform: scale(1.05, 0.95);
+    }
+    to {
+      transform: scale(1, 1);
+    }
+  }
+  @-o-keyframes jelly {
+    from {
+      transform: scale(1, 1);
+    }
+    30% {
+      transform: scale(1.25, 0.75);
+    }
+    40% {
+      transform: scale(0.75, 1.25);
+    }
+    50% {
+      transform: scale(1.15, 0.85);
+    }
+    65% {
+      transform: scale(0.95, 1.05);
+    }
+    75% {
+      transform: scale(1.05, 0.95);
+    }
+    to {
+      transform: scale(1, 1);
+    }
+  }
+  @keyframes jelly {
+    from {
+      transform: scale(1, 1);
+    }
+    30% {
+      transform: scale(1.25, 0.75);
+    }
+    40% {
+      transform: scale(0.75, 1.25);
+    }
+    50% {
+      transform: scale(1.15, 0.85);
+    }
+    65% {
+      transform: scale(0.95, 1.05);
+    }
+    75% {
+      transform: scale(1.05, 0.95);
+    }
+    to {
+      transform: scale(1, 1);
+    }
+  }
+  
+
+  .remenber-forgot {
+     @include spaceCenter;
+     margin-bottom: 1rem;
+     a {
+         color: $secondaryColor;
+         font-size: 12px;
+        line-height: 13px;
+        font-weight: $font-normal;
+        text-decoration: underline;
+        cursor: pointer;
+        &:hover {
+            color: $secondaryColor;
+            text-decoration: underline;
+
+        }
+     }
+  }

@@ -1,0 +1,38 @@
+@import "../styles/Variables.scss";
+@import "../styles/Mixins.scss";
+
+.trending-location {
+    .trending-img {
+        position: relative;
+        width: 265px;
+        height: 202px;
+        margin-bottom: 4rem;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        &-overlay {
+            position: absolute;
+            top: 0;
+            background: rgba(0, 0, 0, 0.2);
+            width: 100%;
+            height: 100%;
+            div {
+                position: absolute;
+                bottom: 0;
+                margin: 1rem;
+            }
+            p {
+                color: $white;
+                font-size: $font-size-base;
+                line-height: $font-events-base;
+                font-weight: $font-bold;
+                margin-bottom: 0;
+            }
+        }
+        @include medium-screens  { width: 100%; }
+    }
+
+}
